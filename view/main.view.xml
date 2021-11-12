@@ -1,0 +1,43 @@
+<mvc:View controllerName="takeshiprueba_glocal.controller.main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<Panel class="floatingLogo" >
+					<Image src="images/glocal.png"/>
+				</Panel>
+				<content>
+					<Table id="oTableEscritos" items="{ path: 'escritosData>/escritosData'}">
+						<columns>
+							<Column >
+								<Text text="Description"/>
+							</Column>
+							<Column >
+								<Text text="End-Point"/>
+							</Column>
+							<Column >
+								<Text text=""/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Navigation" press="handlePress">
+								<cells>
+									<Text text="{escritosData>name}"></Text>
+									<Text text="{escritosData>link}"></Text>
+									<!--<Button icon="sap-icon://open-command-field" press="handlePress"/>-->
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Text text="{i18n>rights}"></Text>
+						<ToolbarSpacer/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
